@@ -6,7 +6,7 @@ class uart_generator;
     mailbox #(uart_transaction ) gen2drv; // Gửi transaction đến Driver
     mailbox #(uart_transaction ) gen2scb; // Gui transaction đến Scoreboard
 
-    int num_packet = 100 ; // so luong packet muon tao
+    int num_packet = 500 ; // so luong packet muon tao
 // Trong uart_generator.sv
 task start_random(int count);
     repeat(count) begin

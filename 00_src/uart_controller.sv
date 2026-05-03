@@ -70,7 +70,14 @@ module uart_controller (
             START_BIT: next_state = DATA_BITS;
             DATA_BITS: if (bit_cnt == 3'd7) next_state = STOP_BITS;
             STOP_BITS: if (stop_cnt == 1'b1) next_state = RX_DONE;
-            RX_DONE:   next_state = IDLE;
+            //RX_DONE:   next_state = IDLE;
+            // Thay vì luôn về IDLE, hãy kiểm tra Start bit ngay tại đây
+            RX_DONE:   begin
+            if (core_ctrl[1] && !RXD) 
+                next_state = START_BIT; // Nhảy thẳng sang gói mới[cite: 10]
+            else 
+                next_state = IDLE;
+        end
             default:   next_state = IDLE;
         endcase
     end

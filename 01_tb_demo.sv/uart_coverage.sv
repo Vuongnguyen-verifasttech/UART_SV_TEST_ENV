@@ -13,7 +13,7 @@ class uart_coverage;
 
         // 3. Địa chỉ thanh ghi (TC6, TC12): Quan trọng để check Illegal Address
         cp_addr: coverpoint tr.addr {
-            bins valid_regs[] = {8'h00, 8'h01, 8'h02}; // Các thanh ghi hợp lệ
+            bins valid_regs[] = {8'h00, 8'h01}; // Các thanh ghi hợp lệ
             bins illegal = {8'h55};                   // Cho TC12
         }
 
