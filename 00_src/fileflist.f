@@ -1,0 +1,11 @@
+00_src/uart_controller.sv
+01_tb/uart_generator.sv
+01_tb/uart_monitor.sv
+01_tb/uart_driver.sv
+01_tb/uart_test.sv
+01_tb/uart_transaction.sv
+01_tb/uart_if.sv
+01_tb/uart_env.sv
+01_tb/uart_coverage.sv
+01_tb/uart_scoreboard.sv
+01_tb/tb_top.sv
